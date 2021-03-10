@@ -1,0 +1,37 @@
+<html lang="en">
+    <head>
+        <title>Cookies from the after life</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <h1>Ghost cookies 👻</h1>
+        <ul id="list"></ul>
+
+        <div id="failure-hint">
+            <p>That did not work as planned, please try the following</p>
+            <ul>
+                <li>Use Google Chrome / Chromium</li>
+                <li>Open the Dev Tools if you already use Chrome / Chromium</li>
+                <li>In very rare cases just refresh. There is a timeout of 250ms and you might have gotten unlucky</li>
+            </ul>
+        </div>
+
+        <script>
+            window.addEventListener('DOMContentLoaded', () => {
+                setTimeout(() => {
+                    const cookies = document.cookie.split(';');
+                    if (cookies.length > 1) {
+                        const list = document.getElementById('list');
+                        for (const cookie of cookies) {
+                            const listElement = document.createElement('li');
+                            listElement.innerHTML = unescape(cookie);
+                            list.appendChild(listElement);
+                        }
+                    } else {
+                        document.getElementById('failure-hint').style.display = 'block';
+                    }
+                }, 250);
+            });
+        </script>
+    </body>
+</html>

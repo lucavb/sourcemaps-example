@@ -1,0 +1,13 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.red {
+    color: red;
+}
+
+#failure-hint {
+    display: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
